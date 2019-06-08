@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/img/site/blog.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Baker Blog</title>
+</head>
+<body onload="init()">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="/img/site/icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Baker's Blog
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-cadastro-post">Cadastrar um post</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" id="form-busca">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card">
+                        <h5 class="card-header center">Como fazer tal coisa</h5>
+                        <div class="card-body">
+                            <img src="/img/conteudo/howto.jpg" alt="imagem" class="img-blog">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus veritatis assumenda doloribus itaque a tempore voluptas pariatur quae, magni totam quibusdam eveniet asperiores, commodi eaque harum! Nihil odit tempore quasi?
+                            Nam ullam veniam, esse nesciunt quis laudantium nulla porro velit nihil doloribus possimus architecto beatae consectetur fugit numquam accusamus vitae voluptatem optio ipsam maxime eligendi, qui officiis? Temporibus, quae laboriosam.
+                            Cum consequatur esse vel aperiam ipsa cupiditate perferendis iusto odio. Id neque rerum provident eveniet dolores. Odit perferendis tenetur sunt mollitia ducimus. Aspernatur iure eius porro, exercitationem velit optio fugit?
+                            Quam necessitatibus voluptate corporis molestiae aspernatur, facilis recusandae commodi vel quasi magni illo. Illo ex vitae numquam, optio, assumenda quos sapiente qui eum doloribus sit similique possimus cupiditate distinctio harum.
+                            Vel beatae ipsum, itaque cum numquam ullam, reprehenderit delectus aperiam officiis voluptatibus consequatur. Placeat eligendi, officiis commodi eveniet quisquam error impedit quod iste explicabo dolores non atque reprehenderit nostrum porro.
+                            Magni porro quam vel incidunt ratione. Quia obcaecati quisquam dolorum, alias numquam cum illum mollitia, doloribus nihil, pariatur odio. Perspiciatis tempore dolore dicta consectetur rem doloremque vero non nostrum voluptatibus.
+                            Itaque debitis suscipit vel! Nobis odit alias natus voluptatibus, veniam repellat aut sequi iste aspernatur facilis quas! Sit eos laborum facilis, consequatur voluptate autem commodi labore quidem soluta, porro similique.i.</p>
+                            <img src="/img/site/likeBlank.png" alt="Gostei" class="like">
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-comentarios">
+                                Comentar
+                            </button>
+                            <p>Número de curtidas: 20</p>
+                            
+                            <div class="comentarios">
+                                <h3>Comentários</h3>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-muted">Samuel</h6>
+                                        <p class="card-text">Texto muito interessante</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-muted">Marcos</h6>
+                                        <p class="card-text">Texto horrível</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted">
+                            10/01/2001
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <img src="/img/site/marketing.png" alt="propaganda" class="marketing">
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-comentarios" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Fazer comentário</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="msg">Comentário</label>
+                            <textarea class="form-control" name="msg" id="msg" placeholder="Digite sua opnião"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-cadastro-post" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Cadastrar um post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="titulo">Título</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Digite o título do post">
+                        </div>
+                        <div class="form-group">
+                            <label for="texto">Texto</label>
+                            <textarea class="form-control" name="texto" id="texto" placeholder="Digite o conteúdo do post"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="imagem">Imagem</label>
+                            <input type="file" id="imagem" class="form-control-file">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Cadastrar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+    
+</body>
+</html>

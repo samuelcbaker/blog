@@ -1,0 +1,31 @@
+.center{
+    text-align: center;
+}
+
+.card,.marketing,.comentarios{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.img-blog{
+    width: 40%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.marketing{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.like{
+    cursor: pointer;
+}
+
+.nome-comentario{
+    font-weight: bold;
+    font-style: italic;
+}
