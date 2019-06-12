@@ -1,16 +1,16 @@
 let fakedb = {
-    "posts" : [
+    "posts": [
         {
-            "id" : 1,
-            "nome" : "Justificação pela fé",
-            "texto" : "As obras são como meras muletas. As pessoas se apoiam nelas pra falarem que são boas, mas a verdade é que independente do que elas façam, elas sabem que ainda são naturalmente ruins. Muitas vezes as pessoas acham que ao fazer o bem, se aproximam de Deus. Mas saiba que a única forma de se aproximar de Deus é crendo no sacrifício perfeito do seu filho, Jesus Cristo! Leia Romanos 1",
-            "imagem" : "/img/conteudo/justificacaoPelaFe.jpg",
-            "curtidas" : 100,
-            "periodo" : "08/06/2019",
-            "comentarios" : [
+            "id": 1,
+            "nome": "Justificação pela fé",
+            "texto": "As obras são como meras muletas. As pessoas se apoiam nelas pra falarem que são boas, mas a verdade é que independente do que elas façam, elas sabem que ainda são naturalmente ruins. Muitas vezes as pessoas acham que ao fazer o bem, se aproximam de Deus. Mas saiba que a única forma de se aproximar de Deus é crendo no sacrifício perfeito do seu filho, Jesus Cristo! Leia Romanos 1",
+            "imagem": "/img/conteudo/justificacaoPelaFe.jpg",
+            "curtidas": 100,
+            "periodo": "08/06/2019",
+            "comentarios": [
                 {
-                    "nome" : "Samuel",
-                    "msg" : "Amém!"
+                    "nome": "Samuel",
+                    "msg": "Amém!"
                 }
             ],
         },
@@ -93,15 +93,71 @@ let fakedb = {
     ],
 }
 
-function init(){
+function init() {
     if (!localStorage.getItem('dbSamuelBaker')) localStorage.setItem('dbSamuelBaker', JSON.stringify(fakedb));
     let db = JSON.parse(localStorage.getItem('dbSamuelBaker'));
 
-    for(i=0; i < db.posts.length; i++){
-        console.log(i);
-    }
+    let arrayPosts = db.posts.map(post => (
+        `
+        <div class="card">
+            <h5 class="card-header center">${post.nome}</h5>
+            <div class="card-body">
+                <img src="${post.imagem}" alt="imagem" class="img-blog">
+                <p class="card-text">${post.texto}</p>
+                <img src="/img/site/likeBlank.png" alt="Gostei" class="like">
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-comentarios">
+                    Comentar
+                </button>
+                <p>Número de curtidas: ${post.curtidas}</p>
 
+                <div class="comentarios">
+                    <h3>Comentários</h3>
+        ${post.comentarios.map(comentario => (
+            `<div class="card">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">${comentario.nome}</h6>
+                    <p class="card-text">${comentario.msg}</p>
+                </div>
+            </div>`
+        )).join('')}
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                ${post.periodo}
+            </div>
+        </div>
+        `
+    )).join('');
 
-    let posts = '';
-    
+    $('#card-post').html(arrayPosts);
+
+    $('#form-post').on('submit', () => {
+        let titulo = $('#titulo').val();
+        let texto = $('#texto').val();
+        cadastraPost(titulo, texto);
+    });
+
+}
+
+function cadastraPost(titulo, texto) {
+    let jsonPost = {
+        "id": db.posts.lenght + 1,
+        "nome": titulo,
+        "texto": texto,
+        "imagem": "/img/conteudo/santificacao.jpg",
+        "curtidas": 300,
+        "periodo": "06/06/2019",
+        "comentarios": [
+            {
+                "nome": "Anna",
+                "msg": "Estou alegre!"
+            },
+            {
+                "nome": "Samuel",
+                "msg": "Glória a Jesus!"
+            }
+        ],
+    };
+
+    db.posts.push();
 }
