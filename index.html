@@ -37,11 +37,11 @@
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-cadastro-post">Cadastrar
                             um post</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/samuelcbaker/blog" target="_blank">Acessar código no GitHub</a>
+                    </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0" id="form-busca">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
-                </form>
+                
             </div>
         </nav>
     </header>
@@ -73,8 +73,8 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form>
+                <form id="form-comentario">
+                    <div class="modal-body">
                         <div class="form-group">
                             <label for="nome">Nome</label>
                             <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
@@ -83,12 +83,12 @@
                             <label for="msg">Comentário</label>
                             <textarea class="form-control" name="msg" id="msg" placeholder="Digite sua opnião"></textarea>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Enviar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-fechar-comentario">Fechar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -117,13 +117,15 @@
                         </div>
                         <div class="form-group">
                             <label for="imagem">Imagem</label>
-                            <input type="file" id="imagem" class="form-control-file" required>
+                            <input type="file" id="imagem" class="form-control-file" multiple="false" accept="image/*" required>
+                            <div id="imgstore"></div>
+                            <div id="jsonstore" class="invisible"></div>
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" id="btn-cadastro">Cadastrar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-fechar">Fechar</button>
                     </div>
                 </form>
             </div>
