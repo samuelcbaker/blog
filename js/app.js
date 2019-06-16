@@ -160,18 +160,18 @@ function exibePosts(){
                 <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-comentarios" onclick="setPostClicado(${post.id})">
                     Comentar
                 </button>
-                <p>Número de curtidas: ${post.curtidas}</p>
+                <p>${post.curtidas}</p>
 
                 <div class="comentarios">
                     <h3>Comentários</h3>
-        ${post.comentarios.map(comentario => (
-            `<div class="card">
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">${comentario.nome}</h6>
-                    <p class="card-text">${comentario.msg}</p>
-                </div>
-            </div>`
-        )).join('')}
+                    ${post.comentarios.map(comentario => (
+                        `<div class="card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">${comentario.nome}</h6>
+                                <p class="card-text">${comentario.msg}</p>
+                            </div>
+                        </div>`
+                    )).join('')}
                 </div>
             </div>
             <div class="card-footer text-muted">
